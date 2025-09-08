@@ -1,5 +1,6 @@
 import { Eye, Brain, Monitor, Shield, Users, Video, Zap, Activity } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import celestDevice from "@/assets/celest-device.png";
 
 const Features = () => {
@@ -58,13 +59,13 @@ const Features = () => {
     <section id="features" className="py-20 bg-gradient-secondary relative">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary/3 rounded-full blur-2xl" />
+        <div className="absolute top-10 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary/3 rounded-full blur-2xl animate-float" style={{ animationDelay: "3s" }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Revolutionary 
             <span className="text-primary"> Medical Technology</span>
@@ -76,41 +77,44 @@ const Features = () => {
         </div>
 
         {/* Main Feature Showcase */}
-        <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
+        <div className="flex flex-col lg:flex-row items-center gap-16 mb-20 animate-scale-in">
           <div className="lg:w-1/2">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-primary/20 rounded-2xl blur-2xl transform rotate-6" />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-primary/20 rounded-2xl blur-2xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500" />
               <img 
                 src={celestDevice}
                 alt="CELEST Medical Device"
-                className="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl float animate-float"
+                className="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl float animate-float hover-scale"
               />
             </div>
           </div>
           
           <div className="lg:w-1/2 space-y-6">
-            <h3 className="text-3xl font-bold text-foreground">
+            <h3 className="text-3xl font-bold text-foreground animate-slide-up">
               Immersive Surgical Intelligence Platform
             </h3>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
               CELEST represents the pinnacle of medical visualization technology, combining 
               high-definition imaging, artificial intelligence, and immersive 3D experiences 
               to revolutionize surgical procedures and medical education.
             </p>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full animate-medical-pulse" />
-                <span className="text-foreground">10x higher resolution than traditional systems</span>
+              <div className="flex items-center space-x-3 animate-slide-in-right" style={{ animationDelay: "0.4s" }}>
+                <div className="w-3 h-3 bg-primary rounded-full animate-medical-pulse" />
+                <span className="text-foreground font-medium">10x higher resolution than traditional systems</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full animate-medical-pulse" style={{ animationDelay: "0.5s" }} />
-                <span className="text-foreground">Real-time AI-powered surgical guidance</span>
+              <div className="flex items-center space-x-3 animate-slide-in-right" style={{ animationDelay: "0.6s" }}>
+                <div className="w-3 h-3 bg-primary rounded-full animate-medical-pulse" style={{ animationDelay: "0.5s" }} />
+                <span className="text-foreground font-medium">Real-time AI-powered surgical guidance</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full animate-medical-pulse" style={{ animationDelay: "1s" }} />
-                <span className="text-foreground">HIPAA-compliant secure data management</span>
+              <div className="flex items-center space-x-3 animate-slide-in-right" style={{ animationDelay: "0.8s" }}>
+                <div className="w-3 h-3 bg-primary rounded-full animate-medical-pulse" style={{ animationDelay: "1s" }} />
+                <span className="text-foreground font-medium">HIPAA-compliant secure data management</span>
               </div>
             </div>
+            <Button variant="blue" size="lg" className="animate-bounce-in" style={{ animationDelay: "1s" }}>
+              Explore Features
+            </Button>
           </div>
         </div>
 
@@ -119,16 +123,17 @@ const Features = () => {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-card hover:-translate-y-1"
+              className="group bg-card/70 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2 animate-fade-in hover-scale"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className="w-6 h-6 text-primary" />
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:animate-bounce-in transition-all duration-300`}>
+                  <feature.icon className="w-7 h-7 text-primary animate-medical-pulse" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </CardContent>
