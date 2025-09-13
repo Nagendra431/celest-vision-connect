@@ -22,7 +22,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/d37d94e8-172c-41e9-aacb-3bcdba983d02.png" 
                 alt="CELEST Logo"
-                className="w-10 h-10 hover:animate-rotate-logo transition-transform duration-300"
+                className="w-10 h-10"
               />
             </div>
             <div className="flex items-center space-x-2">
@@ -37,7 +37,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-all duration-300 flex items-center space-x-2 hover-scale group"
+                className="text-muted-foreground hover:text-primary flex items-center space-x-2 group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <item.icon className="w-4 h-4 group-hover:animate-medical-pulse" />
@@ -74,7 +74,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-all duration-300 flex items-center space-x-2 py-2 hover-scale animate-fade-in"
+                  className="text-muted-foreground hover:text-primary flex items-center space-x-2 py-2 animate-fade-in"
                   onClick={() => setIsMenuOpen(false)}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >

@@ -90,7 +90,7 @@ const Demo = () => {
               
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 bg-gradient-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-primary/10 rounded-xl flex items-center justify-center">
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
